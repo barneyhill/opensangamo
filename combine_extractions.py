@@ -21,9 +21,10 @@ TARGET_COLUMNS = {
     "Target ID", "Target sequence",
 }
 F_COLUMNS = {"F1", "F2", "F3", "F4", "F5", "F6"}
-IGNORE_COLUMNS = {"AA Sequence"}
+AA_COLUMNS = {"AA Sequence"}
+IGNORE_COLUMNS = set()
 
-OUTPUT_FIELDS = ["patent_id", "ZFN", "Target Sequence", "F1", "F2", "F3", "F4", "F5", "F6"]
+OUTPUT_FIELDS = ["patent_id", "ZFN", "Target Sequence", "F1", "F2", "F3", "F4", "F5", "F6", "AA Sequence"]
 
 warnings = []
 
@@ -150,6 +151,7 @@ def process_patent(patent_id, extractions, seq_lookup):
         # Identify column roles
         id_col = None
         target_col = None
+        aa_col = None
         f_cols = {}
         for header in col_headers:
             if header in ID_COLUMNS:
@@ -158,6 +160,8 @@ def process_patent(patent_id, extractions, seq_lookup):
                 target_col = header
             elif header in F_COLUMNS:
                 f_cols[header] = header
+            elif header in AA_COLUMNS:
+                aa_col = header
             elif header not in IGNORE_COLUMNS:
                 warn(f"{patent_id}: unknown column {header!r}")
 
@@ -187,11 +191,17 @@ def process_patent(patent_id, extractions, seq_lookup):
                     if val and not existing.get(f):
                         existing[f] = val
 
+            # Merge AA Sequence
+            if aa_col and aa_col in row:
+                val = resolve_value(row[aa_col], seq_lookup, "AA Sequence", patent_id)
+                if val and _AA_RE.match(val) and not existing.get("AA Sequence"):
+                    existing["AA Sequence"] = val
+
     # Build output rows
     result = []
     for zfn, fields in rows_by_zfn.items():
         out = {"patent_id": patent_id, "ZFN": zfn}
-        for col in ["Target Sequence", "F1", "F2", "F3", "F4", "F5", "F6"]:
+        for col in ["Target Sequence", "F1", "F2", "F3", "F4", "F5", "F6", "AA Sequence"]:
             out[col] = fields.get(col, "")
         result.append(out)
     return result

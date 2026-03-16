@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sangamo Patent Table Extractor</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.9.155/pdf.min.mjs" type="module"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; height: 100vh; display: flex; flex-direction: column; background: #f5f5f5; color: #222; }
+header { background: #1a1a2e; color: #fff; padding: 8px 16px; font-size: 14px; display: flex; align-items: center; gap: 12px; }
+header h1 { font-size: 16px; font-weight: 600; }
+.app { display: flex; flex: 1; overflow: hidden; }
+
+/* Sidebar */
+.sidebar { width: 280px; min-width: 280px; background: #fff; border-right: 1px solid #ddd; display: flex; flex-direction: column; }
+.sidebar-search { padding: 8px; border-bottom: 1px solid #eee; }
+.sidebar-search input { width: 100%; padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; }
+.patent-list { flex: 1; overflow-y: auto; }
+.patent-item { padding: 8px 12px; border-bottom: 1px solid #f0f0f0; cursor: pointer; font-size: 13px; display: flex; gap: 8px; align-items: flex-start; }
+.patent-item:hover { background: #f0f7ff; }
+.patent-item.active { background: #e0eeff; }
+.patent-check { margin-top: 2px; flex-shrink: 0; cursor: pointer; }
+.patent-item.checked .patent-info { opacity: 0.4; text-decoration: line-through; }
+.patent-indicator { width: 8px; height: 8px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
+.patent-indicator.has-extractions { background: #22c55e; }
+.patent-indicator.no-extractions { background: #ddd; }
+.patent-info { flex: 1; min-width: 0; }
+.patent-key { font-weight: 600; font-size: 12px; color: #555; }
+.patent-title { font-size: 12px; color: #777; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.patent-seq-badge { background: #e0e7ff; color: #3730a3; font-size: 11px; padding: 1px 6px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; }
+
+/* PDF viewer */
+.viewer { flex: 1; display: flex; flex-direction: column; min-width: 0; background: #e8e8e8; }
+.viewer-toolbar { background: #fff; border-bottom: 1px solid #ddd; padding: 6px 12px; display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.viewer-toolbar button { padding: 4px 10px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; font-size: 13px; }
+.viewer-toolbar button:hover { background: #f0f0f0; }
+.viewer-toolbar input[type=number] { width: 50px; padding: 3px 6px; border: 1px solid #ccc; border-radius: 4px; text-align: center; font-size: 13px; }
+.canvas-container { flex: 1; overflow: auto; position: relative; display: flex; justify-content: center; padding: 16px; }
+.canvas-wrapper { position: relative; display: inline-block; }
+#pdf-canvas { display: block; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+#overlay-canvas { position: absolute; top: 0; left: 0; cursor: crosshair; }
+.no-patent { display: flex; align-items: center; justify-content: center; flex: 1; color: #999; font-size: 14px; }
+
+/* Extraction panel */
+.panel { width: 380px; min-width: 380px; background: #fff; border-left: 1px solid #ddd; display: flex; flex-direction: column; overflow-y: auto; }
+.panel-section { padding: 12px; border-bottom: 1px solid #eee; }
+.panel-section h3 { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #555; }
+#crop-preview { max-width: 100%; border: 1px solid #ddd; border-radius: 4px; display: none; }
+.crop-placeholder { color: #aaa; font-size: 12px; padding: 20px; text-align: center; border: 2px dashed #ddd; border-radius: 4px; }
+
+/* Column config */
+.col-row { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; }
+.col-row input[type=text] { flex: 1; padding: 4px 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; }
+.col-row label { font-size: 11px; display: flex; align-items: center; gap: 2px; white-space: nowrap; }
+.col-row button { padding: 2px 8px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; font-size: 12px; }
+.col-row button:hover { background: #fee; }
+#add-col-btn { font-size: 12px; padding: 4px 10px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; }
+#add-col-btn:hover { background: #f0f7ff; }
+
+/* Action buttons */
+.action-btn { padding: 6px 16px; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 500; }
+.action-btn.primary { background: #3b82f6; color: #fff; }
+.action-btn.primary:hover { background: #2563eb; }
+.action-btn.primary:disabled { background: #93c5fd; cursor: not-allowed; }
+.action-btn.success { background: #22c55e; color: #fff; }
+.action-btn.success:hover { background: #16a34a; }
+.action-btn.danger { background: #ef4444; color: #fff; }
+.action-btn.danger:hover { background: #dc2626; }
+.actions-row { display: flex; gap: 8px; margin-top: 8px; }
+
+/* Loading */
+.extract-loading { display: flex; align-items: center; gap: 8px; padding: 8px 0; font-size: 12px; color: #666; }
+.extract-loading .spinner { width: 14px; height: 14px; border: 2px solid #ddd; border-top-color: #3b82f6; border-radius: 50%; animation: spin 0.6s linear infinite; flex-shrink: 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.extract-timer { font-variant-numeric: tabular-nums; }
+
+/* Results table */
+.result-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px; }
+.result-table th, .result-table td { border: 1px solid #ddd; padding: 4px 8px; text-align: left; }
+.result-table th { background: #f5f5f5; font-weight: 600; }
+.result-table td[contenteditable] { cursor: text; }
+.result-table td[contenteditable]:focus { outline: 2px solid #3b82f6; outline-offset: -2px; background: #eff6ff; }
+.result-table tr.flagged { background: #fef2f2; }
+.result-table .row-actions { white-space: nowrap; }
+.result-table .row-actions button { border: none; background: none; cursor: pointer; padding: 0 2px; font-size: 13px; }
+.result-table .row-actions button:hover { color: #dc2626; }
+.reextract-btn { margin-top: 6px; }
+
+/* Job cards */
+.job-card { border: 1px solid #ddd; border-radius: 6px; margin-bottom: 8px; overflow: hidden; }
+.job-card-header { padding: 8px 10px; background: #fafafa; font-size: 12px; display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.job-card-header .job-label { flex: 1; min-width: 0; font-weight: 500; }
+.job-status { font-size: 11px; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+.job-status.pending { background: #dbeafe; color: #1d4ed8; }
+.job-status.done { background: #dcfce7; color: #166534; }
+.job-status.error { background: #fef2f2; color: #991b1b; }
+.job-card-body { padding: 8px 10px; overflow-x: auto; }
+.job-crop-thumb { max-width: 100%; max-height: 60px; border: 1px solid #eee; border-radius: 3px; margin-bottom: 6px; }
+.job-dismiss { border: none; background: none; cursor: pointer; font-size: 16px; color: #999; padding: 0 2px; line-height: 1; }
+.job-dismiss:hover { color: #dc2626; }
+
+/* Saved extractions */
+.saved-card { border: 1px solid #ddd; border-radius: 4px; margin-bottom: 8px; }
+.saved-card-header { padding: 8px 10px; background: #fafafa; cursor: pointer; font-size: 12px; display: flex; justify-content: space-between; }
+.saved-card-header:hover { background: #f0f0f0; }
+.saved-card-body { padding: 8px 10px; display: none; overflow-x: auto; }
+.saved-card.open .saved-card-body { display: block; }
+
+.loading { color: #999; font-size: 12px; }
+.error-msg { color: #dc2626; font-size: 12px; margin-top: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sangamo Patent Table Extractor</h1>
+</header>
+<div class="app">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-search">
+      <input type="text" id="search-input" placeholder="Search patents...">
+    </div>
+    <div class="patent-list" id="patent-list"></div>
+  </div>
+
+  <!-- PDF Viewer -->
+  <div class="viewer" id="viewer">
+    <div class="no-patent" id="no-patent-msg">Select a patent from the sidebar</div>
+    <div class="viewer-toolbar" id="viewer-toolbar" style="display:none;">
+      <button id="prev-page">&#9664;</button>
+      <span>Page</span>
+      <input type="number" id="page-input" min="1" value="1">
+      <span>/ <span id="page-count">0</span></span>
+      <button id="next-page">&#9654;</button>
+      <span style="margin-left: auto; color: #888; font-size: 12px;" id="patent-label"></span>
+    </div>
+    <div class="canvas-container" id="canvas-container" style="display:none;">
+      <div class="canvas-wrapper">
+        <canvas id="pdf-canvas"></canvas>
+        <canvas id="overlay-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Extraction Panel -->
+  <div class="panel">
+    <div class="panel-section">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <h3>Crop Preview</h3>
+        <button id="rotate-crop-btn" class="action-btn primary" style="font-size:11px;padding:2px 8px;display:none;" title="Rotate 90° clockwise">Rotate ↻</button>
+      </div>
+      <img id="crop-preview">
+      <div class="crop-placeholder" id="crop-placeholder">Draw a rectangle on the PDF to crop a region</div>
+    </div>
+
+    <div class="panel-section">
+      <h3>Column Headers</h3>
+      <select id="preset-select" style="width:100%; margin-bottom:8px; padding:4px 8px; border:1px solid #ccc; border-radius:4px; font-size:12px; display:none;">
+        <option value="">Load saved columns...</option>
+      </select>
+      <div id="columns-config"></div>
+      <button id="add-col-btn">+ Add Column</button>
+      <div class="actions-row">
+        <button class="action-btn primary" id="extract-btn" disabled>Extract</button>
+      </div>
+      <div id="extract-error" class="error-msg"></div>
+    </div>
+
+    <div class="panel-section">
+      <h3>Extraction Jobs</h3>
+      <div id="jobs-container"><span class="loading">No active jobs</span></div>
+    </div>
+
+    <div class="panel-section">
+      <h3>Saved Extractions</h3>
+      <div id="saved-container"><span class="loading">Select a patent to view</span></div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.9.155/pdf.min.mjs';
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.9.155/pdf.worker.min.mjs';
+
+// ---------------------------------------------------------------------------
+// State
+// ---------------------------------------------------------------------------
+let patents = [];
+let currentPatent = null;
+let pdfDoc = null;
+let currentPage = 1;
+let cropData = null;       // {x, y, w, h} in canvas coords
+
+// Job system
+let nextJobId = 1;
+const jobs = new Map(); // jobId -> { id, status, patentId, page, cropData, cropDataUrl, columns, rows, error, startTime, timerId }
+
+// DOM refs
+const patentListEl = document.getElementById('patent-list');
+const searchInput = document.getElementById('search-input');
+const viewerToolbar = document.getElementById('viewer-toolbar');
+const canvasContainer = document.getElementById('canvas-container');
+const noPatentMsg = document.getElementById('no-patent-msg');
+const pdfCanvas = document.getElementById('pdf-canvas');
+const overlayCanvas = document.getElementById('overlay-canvas');
+const pageInput = document.getElementById('page-input');
+const pageCountEl = document.getElementById('page-count');
+const patentLabel = document.getElementById('patent-label');
+const cropPreview = document.getElementById('crop-preview');
+const cropPlaceholder = document.getElementById('crop-placeholder');
+const rotateCropBtn = document.getElementById('rotate-crop-btn');
+const columnsConfig = document.getElementById('columns-config');
+const extractBtn = document.getElementById('extract-btn');
+const extractError = document.getElementById('extract-error');
+const jobsContainer = document.getElementById('jobs-container');
+const savedContainer = document.getElementById('saved-container');
+
+// ---------------------------------------------------------------------------
+// Patent list
+// ---------------------------------------------------------------------------
+async function loadPatents() {
+  const resp = await fetch('/api/patents');
+  patents = await resp.json();
+  renderPatentList();
+}
+
+// Checked-off state persisted in localStorage
+const CHECKED_KEY = 'sangamo-checked-patents';
+function getChecked() {
+  try { return JSON.parse(localStorage.getItem(CHECKED_KEY)) || {}; } catch { return {}; }
+}
+function setChecked(id, val) {
+  const c = getChecked(); c[id] = val; localStorage.setItem(CHECKED_KEY, JSON.stringify(c));
+}
+
+function renderPatentList(filter = '') {
+  const f = filter.toLowerCase();
+  const checked = getChecked();
+  const filtered = f
+    ? patents.filter(p => p.display_key.toLowerCase().includes(f) || p.title.toLowerCase().includes(f))
+    : patents;
+  patentListEl.innerHTML = filtered.map(p => `
+    <div class="patent-item${currentPatent?.id === p.id ? ' active' : ''}${checked[p.id] ? ' checked' : ''}" data-id="${p.id}">
+      <input type="checkbox" class="patent-check" ${checked[p.id] ? 'checked' : ''}>
+      <div class="patent-indicator ${p.has_extractions ? 'has-extractions' : 'no-extractions'}"></div>
+      <div class="patent-info">
+        <div class="patent-key">${p.display_key}</div>
+        <div class="patent-title">${p.title}</div>
+      </div>
+      <div class="patent-seq-badge">${p.seq_count} seq</div>
+    </div>
+  `).join('');
+
+  patentListEl.querySelectorAll('.patent-item').forEach(el => {
+    el.querySelector('.patent-check').addEventListener('click', (e) => {
+      e.stopPropagation();
+      setChecked(el.dataset.id, e.target.checked);
+      el.classList.toggle('checked', e.target.checked);
+    });
+    el.addEventListener('click', () => selectPatent(el.dataset.id));
+  });
+}
+
+searchInput.addEventListener('input', () => renderPatentList(searchInput.value));
+
+// ---------------------------------------------------------------------------
+// Select patent
+// ---------------------------------------------------------------------------
+async function selectPatent(id) {
+  currentPatent = patents.find(p => p.id === id);
+  if (!currentPatent) return;
+
+  renderPatentList(searchInput.value);
+  noPatentMsg.style.display = 'none';
+  viewerToolbar.style.display = 'flex';
+  canvasContainer.style.display = 'flex';
+  patentLabel.textContent = currentPatent.display_key;
+
+  // Reset working crop state
+  cropData = null;
+  cropPreview.style.display = 'none';
+  cropPlaceholder.style.display = 'block';
+  rotateCropBtn.style.display = 'none';
+  extractBtn.disabled = true;
+  extractError.textContent = '';
+
+  // Filter jobs display to current patent
+  filterJobsForPatent(id);
+
+  // Load PDF
+  const loadingTask = pdfjsLib.getDocument(`/api/patents/${id}/pdf`);
+  pdfDoc = await loadingTask.promise;
+  pageCountEl.textContent = pdfDoc.numPages;
+  currentPage = 1;
+  pageInput.value = 1;
+  pageInput.max = pdfDoc.numPages;
+  await renderPage(currentPage);
+
+  // Load saved extractions
+  await loadSavedExtractions();
+
+  // Reset columns to default
+  resetColumns();
+}
+
+// ---------------------------------------------------------------------------
+// PDF rendering
+// ---------------------------------------------------------------------------
+async function renderPage(num) {
+  const page = await pdfDoc.getPage(num);
+  // Fit page height to the available container height
+  const containerHeight = canvasContainer.clientHeight - 32; // subtract padding
+  const unscaledViewport = page.getViewport({ scale: 1 });
+  const scale = containerHeight / unscaledViewport.height;
+  const viewport = page.getViewport({ scale });
+
+  // Render at higher resolution for Retina, display at CSS size
+  const dpr = window.devicePixelRatio || 1;
+  const hiresViewport = page.getViewport({ scale: scale * dpr });
+
+  pdfCanvas.width = hiresViewport.width;
+  pdfCanvas.height = hiresViewport.height;
+  pdfCanvas.style.width = viewport.width + 'px';
+  pdfCanvas.style.height = viewport.height + 'px';
+  overlayCanvas.width = viewport.width;
+  overlayCanvas.height = viewport.height;
+  overlayCanvas.style.width = viewport.width + 'px';
+  overlayCanvas.style.height = viewport.height + 'px';
+
+  const ctx = pdfCanvas.getContext('2d');
+  await page.render({ canvasContext: ctx, viewport: hiresViewport }).promise;
+
+  // Clear overlay
+  const overlayCtx = overlayCanvas.getContext('2d');
+  overlayCtx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+}
+
+// Page navigation
+document.getElementById('prev-page').addEventListener('click', async () => {
+  if (currentPage > 1) { currentPage--; pageInput.value = currentPage; await renderPage(currentPage); }
+});
+document.getElementById('next-page').addEventListener('click', async () => {
+  if (pdfDoc && currentPage < pdfDoc.numPages) { currentPage++; pageInput.value = currentPage; await renderPage(currentPage); }
+});
+pageInput.addEventListener('change', async () => {
+  const val = parseInt(pageInput.value);
+  if (pdfDoc && val >= 1 && val <= pdfDoc.numPages) { currentPage = val; await renderPage(currentPage); }
+});
+
+// Keyboard nav
+document.addEventListener('keydown', async (e) => {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 'ArrowLeft') { document.getElementById('prev-page').click(); }
+  else if (e.key === 'ArrowRight') { document.getElementById('next-page').click(); }
+});
+
+// ---------------------------------------------------------------------------
+// Crop tool
+// ---------------------------------------------------------------------------
+let isDragging = false;
+let dragStart = { x: 0, y: 0 };
+
+overlayCanvas.addEventListener('mousedown', (e) => {
+  const rect = overlayCanvas.getBoundingClientRect();
+  dragStart = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+  isDragging = true;
+});
+
+overlayCanvas.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  const rect = overlayCanvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  const ctx = overlayCanvas.getContext('2d');
+  ctx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+  ctx.strokeStyle = '#3b82f6';
+  ctx.lineWidth = 2;
+  ctx.setLineDash([6, 3]);
+  ctx.fillStyle = 'rgba(59, 130, 246, 0.1)';
+  const w = x - dragStart.x;
+  const h = y - dragStart.y;
+  ctx.fillRect(dragStart.x, dragStart.y, w, h);
+  ctx.strokeRect(dragStart.x, dragStart.y, w, h);
+});
+
+overlayCanvas.addEventListener('mouseup', (e) => {
+  if (!isDragging) return;
+  isDragging = false;
+  const rect = overlayCanvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  let cx = Math.min(dragStart.x, x);
+  let cy = Math.min(dragStart.y, y);
+  let cw = Math.abs(x - dragStart.x);
+  let ch = Math.abs(y - dragStart.y);
+
+  if (cw < 10 || ch < 10) return; // Too small
+
+  cropData = { x: Math.round(cx), y: Math.round(cy), w: Math.round(cw), h: Math.round(ch) };
+
+  // Extract region at full Retina resolution for sharp OCR
+  const dpr = window.devicePixelRatio || 1;
+  const pdfCtx = pdfCanvas.getContext('2d');
+  const imageData = pdfCtx.getImageData(
+    cropData.x * dpr, cropData.y * dpr, cropData.w * dpr, cropData.h * dpr
+  );
+
+  const tmpCanvas = document.createElement('canvas');
+  tmpCanvas.width = cropData.w * dpr;
+  tmpCanvas.height = cropData.h * dpr;
+  tmpCanvas.getContext('2d').putImageData(imageData, 0, 0);
+
+  const dataUrl = tmpCanvas.toDataURL('image/png');
+  cropPreview.src = dataUrl;
+  cropPreview.style.display = 'block';
+  cropPlaceholder.style.display = 'none';
+  rotateCropBtn.style.display = 'inline-block';
+  extractBtn.disabled = false;
+});
+
+// Rotate crop preview 90° clockwise
+rotateCropBtn.addEventListener('click', () => {
+  const img = new Image();
+  img.onload = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = img.height;
+    canvas.height = img.width;
+    const ctx = canvas.getContext('2d');
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.rotate(Math.PI / 2);
+    ctx.drawImage(img, -img.width / 2, -img.height / 2);
+    cropPreview.src = canvas.toDataURL('image/png');
+  };
+  img.src = cropPreview.src;
+});
+
+// ---------------------------------------------------------------------------
+// Column config
+// ---------------------------------------------------------------------------
+function resetColumns() {
+  columnsConfig.innerHTML = '';
+  addColumnRow('', 'all');
+}
+
+function addColumnRow(header = '', mode = 'all') {
+  const row = document.createElement('div');
+  row.className = 'col-row';
+  const name = `col-mode-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
+  row.innerHTML = `
+    <input type="text" placeholder="Header name" value="${header}">
+    <label><input type="radio" name="${name}" value="all" ${mode === 'all' ? 'checked' : ''}> All</label>
+    <label><input type="radio" name="${name}" value="seq_ids" ${mode === 'seq_ids' ? 'checked' : ''}> SEQ</label>
+    <button class="remove-col" title="Remove">&minus;</button>
+  `;
+  row.querySelector('.remove-col').addEventListener('click', () => {
+    row.remove();
+  });
+  columnsConfig.appendChild(row);
+}
+
+document.getElementById('add-col-btn').addEventListener('click', () => addColumnRow());
+
+function getColumns() {
+  const rows = columnsConfig.querySelectorAll('.col-row');
+  const cols = [];
+  rows.forEach(row => {
+    const header = row.querySelector('input[type=text]').value.trim();
+    const mode = row.querySelector('input[type=radio]:checked')?.value || 'all';
+    if (header) cols.push({ header, mode });
+  });
+  return cols;
+}
+
+// ---------------------------------------------------------------------------
+// Extract (fire-and-forget with job system)
+// ---------------------------------------------------------------------------
+async function doExtract(patentId, columns, base64) {
+  const resp = await fetch(`/api/patents/${patentId}/extract`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ image_base64: base64, columns }),
+  });
+  if (!resp.ok) {
+    const err = await resp.json().catch(() => ({ detail: resp.statusText }));
+    throw new Error(err.detail || 'Extraction failed');
+  }
+  return (await resp.json()).rows;
+}
+
+extractBtn.addEventListener('click', () => {
+  if (!cropData || !currentPatent) return;
+
+  const columns = getColumns();
+  if (columns.length === 0) {
+    extractError.textContent = 'Add at least one column header.';
+    return;
+  }
+  extractError.textContent = '';
+
+  // Snapshot current state into a job
+  const jobId = nextJobId++;
+  const base64 = cropPreview.src.split(',')[1];
+  const job = {
+    id: jobId,
+    status: 'pending',
+    patentId: currentPatent.id,
+    page: currentPage,
+    cropData: { ...cropData },
+    cropDataUrl: cropPreview.src,
+    columns: JSON.parse(JSON.stringify(columns)),
+    rows: null,
+    error: null,
+    startTime: Date.now(),
+    timerId: null,
+  };
+  jobs.set(jobId, job);
+
+  // Render the card immediately (pending state)
+  renderAllJobs();
+
+  // Fire the extraction (no await — runs in background)
+  doExtract(job.patentId, job.columns, base64).then(rows => {
+    job.status = 'done';
+    job.rows = rows;
+    if (job.timerId) { clearInterval(job.timerId); job.timerId = null; }
+    renderJobCard(jobId);
+  }).catch(err => {
+    job.status = 'error';
+    job.error = err.message;
+    if (job.timerId) { clearInterval(job.timerId); job.timerId = null; }
+    renderJobCard(jobId);
+  });
+
+  // Reset working crop so user can immediately draw another
+  cropData = null;
+  cropPreview.style.display = 'none';
+  cropPlaceholder.style.display = 'block';
+  rotateCropBtn.style.display = 'none';
+  extractBtn.disabled = true;
+  const overlayCtx = overlayCanvas.getContext('2d');
+  overlayCtx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+});
+
+// ---------------------------------------------------------------------------
+// Job rendering
+// ---------------------------------------------------------------------------
+function filterJobsForPatent(patentId) {
+  // Show/hide job cards based on current patent
+  for (const [jobId, job] of jobs) {
+    const el = document.getElementById(`job-${jobId}`);
+    if (el) {
+      el.style.display = job.patentId === patentId ? '' : 'none';
+    }
+  }
+  updateJobsPlaceholder();
+}
+
+function updateJobsPlaceholder() {
+  const hasVisibleJobs = currentPatent && Array.from(jobs.values()).some(j => j.patentId === currentPatent.id);
+  if (!hasVisibleJobs && jobsContainer.querySelectorAll('.job-card').length === 0) {
+    if (!jobsContainer.querySelector('.loading')) {
+      jobsContainer.innerHTML = '<span class="loading">No active jobs</span>';
+    }
+  }
+}
+
+function renderAllJobs() {
+  // Clear placeholder
+  const placeholder = jobsContainer.querySelector('.loading');
+  if (placeholder) placeholder.remove();
+
+  // Build cards for all jobs of current patent, newest first
+  const currentJobs = Array.from(jobs.values())
+    .filter(j => currentPatent && j.patentId === currentPatent.id)
+    .sort((a, b) => b.id - a.id);
+
+  // Remove cards that no longer exist
+  jobsContainer.querySelectorAll('.job-card').forEach(el => {
+    const id = parseInt(el.id.replace('job-', ''));
+    if (!jobs.has(id)) el.remove();
+  });
+
+  // Add/update cards
+  for (const job of currentJobs) {
+    let el = document.getElementById(`job-${job.id}`);
+    if (!el) {
+      el = document.createElement('div');
+      el.id = `job-${job.id}`;
+      el.className = 'job-card';
+      // Insert newest first
+      jobsContainer.prepend(el);
+    }
+    renderJobCardInner(el, job);
+  }
+
+  updateJobsPlaceholder();
+}
+
+function renderJobCard(jobId) {
+  const job = jobs.get(jobId);
+  if (!job) return;
+  let el = document.getElementById(`job-${jobId}`);
+  if (!el) {
+    // Remove placeholder if present
+    const placeholder = jobsContainer.querySelector('.loading');
+    if (placeholder) placeholder.remove();
+
+    el = document.createElement('div');
+    el.id = `job-${jobId}`;
+    el.className = 'job-card';
+    jobsContainer.prepend(el);
+  }
+  // Hide if not current patent
+  if (currentPatent && job.patentId !== currentPatent.id) {
+    el.style.display = 'none';
+  } else {
+    el.style.display = '';
+  }
+  renderJobCardInner(el, job);
+}
+
+function renderJobCardInner(el, job) {
+  const statusLabel = job.status === 'pending' ? 'Extracting' : job.status === 'done' ? 'Done' : 'Error';
+  const elapsed = ((Date.now() - job.startTime) / 1000).toFixed(1);
+
+  let bodyHtml = '';
+
+  if (job.status === 'pending') {
+    bodyHtml = `
+      <img class="job-crop-thumb" src="${job.cropDataUrl}">
+      <div class="extract-loading">
+        <div class="spinner"></div>
+        <span>Extracting... <span class="extract-timer" id="job-timer-${job.id}">${elapsed}s</span></span>
+      </div>`;
+    // Start timer if not already running
+    if (!job.timerId) {
+      job.timerId = setInterval(() => {
+        const timerEl = document.getElementById(`job-timer-${job.id}`);
+        if (timerEl) {
+          timerEl.textContent = ((Date.now() - job.startTime) / 1000).toFixed(1) + 's';
+        }
+      }, 100);
+    }
+  } else if (job.status === 'done') {
+    const tableHtml = buildResultsTable(job.rows, job.columns, job.id);
+    bodyHtml = `
+      <img class="job-crop-thumb" src="${job.cropDataUrl}">
+      <div class="job-results" id="job-results-${job.id}">${tableHtml}</div>
+      <div class="actions-row" style="margin-top:6px;">
+        <button class="action-btn success job-save-btn" data-job-id="${job.id}">Save</button>
+        <button class="action-btn primary job-reextract-btn" data-job-id="${job.id}" style="display:none;">Re-extract flagged</button>
+      </div>`;
+  } else if (job.status === 'error') {
+    bodyHtml = `
+      <img class="job-crop-thumb" src="${job.cropDataUrl}">
+      <div class="error-msg">${job.error}</div>
+      <div class="actions-row" style="margin-top:6px;">
+        <button class="action-btn primary job-retry-btn" data-job-id="${job.id}">Retry</button>
+      </div>`;
+  }
+
+  el.innerHTML = `
+    <div class="job-card-header">
+      <span class="job-status ${job.status}">${statusLabel}</span>
+      <span class="job-label">Page ${job.page} &mdash; ${elapsed}s</span>
+      <button class="job-dismiss" data-job-id="${job.id}" title="Dismiss">&times;</button>
+    </div>
+    <div class="job-card-body">${bodyHtml}</div>`;
+
+  // Wire up dismiss
+  el.querySelector('.job-dismiss').addEventListener('click', () => {
+    if (job.timerId) clearInterval(job.timerId);
+    jobs.delete(job.id);
+    el.remove();
+    updateJobsPlaceholder();
+  });
+
+  // Wire up done-state buttons
+  if (job.status === 'done') {
+    wireJobResultEvents(el, job);
+  }
+
+  // Wire up retry
+  if (job.status === 'error') {
+    el.querySelector('.job-retry-btn').addEventListener('click', () => {
+      job.status = 'pending';
+      job.error = null;
+      job.startTime = Date.now();
+      renderJobCard(job.id);
+
+      const base64 = job.cropDataUrl.split(',')[1];
+      doExtract(job.patentId, job.columns, base64).then(rows => {
+        job.status = 'done';
+        job.rows = rows;
+        if (job.timerId) { clearInterval(job.timerId); job.timerId = null; }
+        renderJobCard(job.id);
+      }).catch(err => {
+        job.status = 'error';
+        job.error = err.message;
+        if (job.timerId) { clearInterval(job.timerId); job.timerId = null; }
+        renderJobCard(job.id);
+      });
+    });
+  }
+}
+
+function buildResultsTable(rows, columns, jobId) {
+  if (!rows || rows.length === 0) {
+    return '<span class="loading">No rows extracted</span>';
+  }
+  const headers = columns.map(c => c.header);
+  let html = '<table class="result-table"><thead><tr><th></th>' +
+    headers.map(h => `<th>${h}</th>`).join('') +
+    '<th></th></tr></thead><tbody>';
+  rows.forEach((row, i) => {
+    html += `<tr data-idx="${i}">` +
+      `<td class="row-actions"><input type="checkbox" class="flag-check" title="Flag for re-extraction"></td>` +
+      headers.map(h => {
+        const val = row[h];
+        const display = Array.isArray(val) ? val.join(', ') : (val ?? '');
+        return `<td contenteditable="true">${display}</td>`;
+      }).join('') +
+      `<td class="row-actions"><button class="delete-row" title="Delete row">&times;</button></td>` +
+      '</tr>';
+  });
+  html += '</tbody></table>';
+  return html;
+}
+
+function wireJobResultEvents(el, job) {
+  const resultsEl = el.querySelector(`#job-results-${job.id}`);
+  const reextractBtn = el.querySelector('.job-reextract-btn');
+  const saveBtn = el.querySelector('.job-save-btn');
+
+  function updateReextract() {
+    const hasFlagged = resultsEl.querySelector('tr.flagged') !== null;
+    reextractBtn.style.display = hasFlagged ? 'inline-block' : 'none';
+  }
+
+  // Flag checkboxes
+  resultsEl.querySelectorAll('.flag-check').forEach(cb => {
+    cb.addEventListener('change', () => {
+      cb.closest('tr').classList.toggle('flagged', cb.checked);
+      updateReextract();
+    });
+  });
+
+  // Delete buttons
+  resultsEl.querySelectorAll('.delete-row').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tr = btn.closest('tr');
+      const idx = parseInt(tr.dataset.idx);
+      job.rows.splice(idx, 1);
+      resultsEl.innerHTML = buildResultsTable(job.rows, job.columns, job.id);
+      wireJobResultEvents(el, job);
+    });
+  });
+
+  // Sync edits back to job.rows on blur
+  resultsEl.querySelectorAll('td[contenteditable]').forEach(td => {
+    td.addEventListener('blur', () => {
+      job.rows = readResultsFromContainer(resultsEl, job.columns);
+    });
+  });
+
+  // Save button
+  saveBtn.addEventListener('click', async () => {
+    if (!job.rows) return;
+    saveBtn.disabled = true;
+    saveBtn.textContent = 'Saving...';
+
+    try {
+      const resp = await fetch(`/api/patents/${job.patentId}/extractions`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          page: job.page,
+          crop: job.cropData,
+          columns: job.columns,
+          rows: job.rows,
+        }),
+      });
+      if (!resp.ok) throw new Error('Save failed');
+
+      // Refresh saved extractions if we're on the same patent
+      if (currentPatent && currentPatent.id === job.patentId) {
+        await loadSavedExtractions();
+      }
+
+      // Update sidebar indicator
+      const p = patents.find(p => p.id === job.patentId);
+      if (p) p.has_extractions = true;
+      renderPatentList(searchInput.value);
+
+      // Remove the job after saving
+      if (job.timerId) clearInterval(job.timerId);
+      jobs.delete(job.id);
+      el.remove();
+      updateJobsPlaceholder();
+    } catch (e) {
+      extractError.textContent = e.message;
+      saveBtn.disabled = false;
+      saveBtn.textContent = 'Save';
+    }
+  });
+
+  // Re-extract flagged rows
+  reextractBtn.addEventListener('click', async () => {
+    const flaggedIdxs = [];
+    resultsEl.querySelectorAll('tbody tr').forEach((tr, i) => {
+      if (tr.classList.contains('flagged')) flaggedIdxs.push(i);
+    });
+    if (flaggedIdxs.length === 0) return;
+
+    reextractBtn.disabled = true;
+    reextractBtn.textContent = 'Re-extracting...';
+
+    try {
+      const base64 = job.cropDataUrl.split(',')[1];
+      const newRows = await doExtract(job.patentId, job.columns, base64);
+      for (const idx of flaggedIdxs) {
+        if (idx < newRows.length) {
+          job.rows[idx] = newRows[idx];
+        }
+      }
+      resultsEl.innerHTML = buildResultsTable(job.rows, job.columns, job.id);
+      wireJobResultEvents(el, job);
+    } catch (e) {
+      extractError.textContent = e.message;
+    } finally {
+      reextractBtn.disabled = false;
+      reextractBtn.textContent = 'Re-extract flagged';
+    }
+  });
+
+  updateReextract();
+}
+
+function readResultsFromContainer(container, columns) {
+  const headers = columns.map(c => c.header);
+  const rows = [];
+  container.querySelectorAll('tbody tr').forEach(tr => {
+    const row = {};
+    tr.querySelectorAll('td[contenteditable]').forEach((td, i) => {
+      const text = td.textContent.trim();
+      const col = columns[i];
+      if (col && col.mode === 'seq_ids') {
+        const nums = text.split(/[,\s]+/).map(Number).filter(n => !isNaN(n));
+        row[headers[i]] = nums.length === 1 ? nums[0] : nums;
+      } else {
+        row[headers[i]] = text;
+      }
+    });
+    rows.push(row);
+  });
+  return rows;
+}
+
+// ---------------------------------------------------------------------------
+// Saved extractions
+// ---------------------------------------------------------------------------
+async function loadSavedExtractions() {
+  if (!currentPatent) return;
+  const resp = await fetch(`/api/patents/${currentPatent.id}/extractions`);
+  const data = await resp.json();
+
+  if (!data.length) {
+    savedContainer.innerHTML = '<span class="loading">No saved extractions</span>';
+    return;
+  }
+
+  savedContainer.innerHTML = data.map((ex, i) => {
+    const headers = ex.columns.map(c => c.header);
+    const table = '<table class="result-table"><thead><tr>' +
+      headers.map(h => `<th>${h}</th>`).join('') +
+      '</tr></thead><tbody>' +
+      (ex.rows || []).map(row =>
+        '<tr>' + headers.map(h => {
+          const val = row[h];
+          const display = Array.isArray(val) ? val.join(', ') : (val ?? '');
+          return `<td>${display}</td>`;
+        }).join('') + '</tr>'
+      ).join('') +
+      '</tbody></table>';
+
+    const ts = new Date(ex.timestamp).toLocaleString();
+    return `
+      <div class="saved-card" data-idx="${i}">
+        <div class="saved-card-header">
+          <span>Page ${ex.page} &mdash; ${headers.join(', ')}</span>
+          <span>${ts}</span>
+        </div>
+        <div class="saved-card-body">
+          ${table}
+          <div style="display:flex;gap:6px;margin-top:6px;">
+            <button class="action-btn primary reuse-cols-btn" data-idx="${i}" style="font-size:11px;padding:3px 10px;">Reuse columns</button>
+            <button class="action-btn danger delete-extraction-btn" data-idx="${i}" style="font-size:11px;padding:3px 10px;">Delete</button>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Click to toggle open + jump to page/crop
+  savedContainer.querySelectorAll('.saved-card').forEach(card => {
+    card.querySelector('.saved-card-header').addEventListener('click', async () => {
+      card.classList.toggle('open');
+      if (!card.classList.contains('open')) return;
+      const ex = data[parseInt(card.dataset.idx)];
+      if (ex.page !== currentPage) {
+        currentPage = ex.page;
+        pageInput.value = currentPage;
+        await renderPage(currentPage);
+      }
+      const ctx = overlayCanvas.getContext('2d');
+      ctx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+      ctx.strokeStyle = '#22c55e';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([6, 3]);
+      ctx.fillStyle = 'rgba(34, 197, 94, 0.1)';
+      ctx.fillRect(ex.crop.x, ex.crop.y, ex.crop.w, ex.crop.h);
+      ctx.strokeRect(ex.crop.x, ex.crop.y, ex.crop.w, ex.crop.h);
+    });
+  });
+
+  // Reuse columns buttons
+  savedContainer.querySelectorAll('.reuse-cols-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const ex = data[parseInt(btn.dataset.idx)];
+      applyColumns(ex.columns);
+    });
+  });
+
+  // Delete extraction buttons
+  savedContainer.querySelectorAll('.delete-extraction-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const idx = parseInt(btn.dataset.idx);
+      btn.disabled = true;
+      btn.textContent = 'Deleting...';
+      try {
+        const resp = await fetch(`/api/patents/${currentPatent.id}/extractions/${idx}`, { method: 'DELETE' });
+        if (!resp.ok) throw new Error('Delete failed');
+        await loadSavedExtractions();
+        // Update sidebar indicator
+        const result = await resp.json();
+        if (result.count === 0) {
+          const p = patents.find(p => p.id === currentPatent.id);
+          if (p) p.has_extractions = false;
+          renderPatentList(searchInput.value);
+        }
+      } catch (e) {
+        btn.disabled = false;
+        btn.textContent = 'Delete';
+      }
+    });
+  });
+
+  // Build preset dropdown from unique column configs across all extractions
+  buildPresetDropdown(data);
+}
+
+function applyColumns(columns) {
+  columnsConfig.innerHTML = '';
+  for (const col of columns) {
+    addColumnRow(col.header, col.mode);
+  }
+}
+
+const presetSelect = document.getElementById('preset-select');
+
+function buildPresetDropdown(extractions) {
+  // Collect unique column configs (by stringified columns)
+  const seen = new Set();
+  const presets = [];
+  for (const ex of extractions) {
+    const key = JSON.stringify(ex.columns);
+    if (!seen.has(key)) {
+      seen.add(key);
+      const label = ex.columns.map(c => c.header + (c.mode === 'seq_ids' ? ' [SEQ]' : '')).join(', ');
+      presets.push({ label, columns: ex.columns });
+    }
+  }
+
+  if (presets.length === 0) {
+    presetSelect.style.display = 'none';
+    return;
+  }
+
+  presetSelect.style.display = 'block';
+  presetSelect.innerHTML = '<option value="">Load saved columns...</option>' +
+    presets.map((p, i) => `<option value="${i}">${p.label}</option>`).join('');
+
+  presetSelect.onchange = () => {
+    const idx = presetSelect.value;
+    if (idx === '') return;
+    applyColumns(presets[parseInt(idx)].columns);
+    presetSelect.value = '';
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Init
+// ---------------------------------------------------------------------------
+resetColumns();
+loadPatents();
+</script>
+</body>
+</html>

@@ -1,0 +1,1122 @@
+[
+  {
+    "display_key": "US 9833479 B2",
+    "serial": "15458258",
+    "pgpub_zip": "ipa170706.zip",
+    "pgpub_xml": "15458258_20170189450.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2017/ipa170706/15458258_20170189450.xml",
+    "grant_zip": "ipg171205.zip",
+    "grant_xml": "15458258_09833479.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2017/ipg171205/15458258_09833479.xml"
+  },
+  {
+    "display_key": "US 2020/0102577 A1",
+    "serial": "16562891",
+    "pgpub_zip": "ipa200402.zip",
+    "pgpub_xml": "16562891_20200102577.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200402/16562891_20200102577.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2020/0291424 A1",
+    "serial": "16859049",
+    "pgpub_zip": "ipa200917.zip",
+    "pgpub_xml": "16859049_20200291424.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200917/16859049_20200291424.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2018/0187173 A1",
+    "serial": "15511858",
+    "pgpub_zip": "ipa180705.zip",
+    "pgpub_xml": "15511858_20180187173.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180705/15511858_20180187173.xml",
+    "grant_zip": "ipg191008.zip",
+    "grant_xml": "15511858_10435677.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2019/ipg191008/15511858_10435677.xml"
+  },
+  {
+    "display_key": "US 11649468 B2",
+    "serial": "15880354",
+    "pgpub_zip": "ipa180719.zip",
+    "pgpub_xml": "15880354_20180201955.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180719/15880354_20180201955.xml",
+    "grant_zip": "ipg230516.zip",
+    "grant_xml": "15880354_11649468.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2023/ipg230516/15880354_11649468.xml"
+  },
+  {
+    "display_key": "US 2020/0246486 A1",
+    "serial": "16534302",
+    "pgpub_zip": "ipa200806.zip",
+    "pgpub_xml": "16534302_20200246486.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200806/16534302_20200246486.xml",
+    "grant_zip": "ipg240102.zip",
+    "grant_xml": "16534302_11857641.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2024/ipg240102/16534302_11857641.xml"
+  },
+  {
+    "display_key": "US 2020/0030408 A1",
+    "serial": "16587428",
+    "pgpub_zip": "ipa200130.zip",
+    "pgpub_xml": "16587428_20200030408.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200130/16587428_20200030408.xml",
+    "grant_zip": "ipg201208.zip",
+    "grant_xml": "16587428_10857203.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg201208/16587428_10857203.xml"
+  },
+  {
+    "display_key": "US 2018/0312826 A1",
+    "serial": "16026722",
+    "pgpub_zip": "ipa181101.zip",
+    "pgpub_xml": "16026722_20180312826.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa181101/16026722_20180312826.xml",
+    "grant_zip": "ipg230516.zip",
+    "grant_xml": "16026722_11648267.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2023/ipg230516/16026722_11648267.xml"
+  },
+  {
+    "display_key": "US 2019/0224246 A1",
+    "serial": "16373407",
+    "pgpub_zip": "ipa190725.zip",
+    "pgpub_xml": "16373407_20190224246.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2019/ipa190725/16373407_20190224246.xml",
+    "grant_zip": "ipg210622.zip",
+    "grant_xml": "16373407_11040115.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2021/ipg210622/16373407_11040115.xml"
+  },
+  {
+    "display_key": "US 2026/0027152 A1",
+    "serial": "18572962",
+    "pgpub_zip": "",
+    "pgpub_xml": "",
+    "pgpub_uri": "",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2022/0324928 A1",
+    "serial": "17766076",
+    "pgpub_zip": "ipa221013.zip",
+    "pgpub_xml": "17766076_20220324928.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2022/ipa221013/17766076_20220324928.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2025/0066433 A1",
+    "serial": "18942681",
+    "pgpub_zip": "ipa250227.zip",
+    "pgpub_xml": "18942681_20250066433.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2025/ipa250227/18942681_20250066433.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2023/0382962 A1",
+    "serial": "18133893",
+    "pgpub_zip": "ipa231130.zip",
+    "pgpub_xml": "18133893_20230382962.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2023/ipa231130/18133893_20230382962.xml",
+    "grant_zip": "ipg240723.zip",
+    "grant_xml": "18133893_12043650.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2024/ipg240723/18133893_12043650.xml"
+  },
+  {
+    "display_key": "US 2025/0268981 A1",
+    "serial": "19189105",
+    "pgpub_zip": "ipa250828.zip",
+    "pgpub_xml": "19189105_20250268981.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2025/ipa250828/19189105_20250268981.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2020/0069735 A1",
+    "serial": "16680935",
+    "pgpub_zip": "ipa200305.zip",
+    "pgpub_xml": "16680935_20200069735.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200305/16680935_20200069735.xml",
+    "grant_zip": "ipg220329.zip",
+    "grant_xml": "16680935_11285175.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2022/ipg220329/16680935_11285175.xml"
+  },
+  {
+    "display_key": "US 10369201 B2",
+    "serial": "15036020",
+    "pgpub_zip": "ipa161013.zip",
+    "pgpub_xml": "15036020_20160296605.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa161013/15036020_20160296605.xml",
+    "grant_zip": "ipg190806.zip",
+    "grant_xml": "15036020_10369201.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2019/ipg190806/15036020_10369201.xml"
+  },
+  {
+    "display_key": "US 2017/0327848 A1",
+    "serial": "15660072",
+    "pgpub_zip": "ipa171116.zip",
+    "pgpub_xml": "15660072_20170327848.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2017/ipa171116/15660072_20170327848.xml",
+    "grant_zip": "ipg180904.zip",
+    "grant_xml": "15660072_10066242.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180904/15660072_10066242.xml"
+  },
+  {
+    "display_key": "US 2019/0218560 A1",
+    "serial": "16374042",
+    "pgpub_zip": "ipa190718.zip",
+    "pgpub_xml": "16374042_20190218560.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2019/ipa190718/16374042_20190218560.xml",
+    "grant_zip": "ipg230502.zip",
+    "grant_xml": "16374042_11639504.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2023/ipg230502/16374042_11639504.xml"
+  },
+  {
+    "display_key": "US 2018/0087072 A1",
+    "serial": "15685580",
+    "pgpub_zip": "ipa180329.zip",
+    "pgpub_xml": "15685580_20180087072.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180329/15685580_20180087072.xml",
+    "grant_zip": "ipg210413.zip",
+    "grant_xml": "15685580_10975393.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2021/ipg210413/15685580_10975393.xml"
+  },
+  {
+    "display_key": "US 2023/0002459 A1",
+    "serial": "17766083",
+    "pgpub_zip": "ipa230105.zip",
+    "pgpub_xml": "17766083_20230002459.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2023/ipa230105/17766083_20230002459.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 11512287 B2",
+    "serial": "16009975",
+    "pgpub_zip": "ipa181220.zip",
+    "pgpub_xml": "16009975_20180362926.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa181220/16009975_20180362926.xml",
+    "grant_zip": "ipg221129.zip",
+    "grant_xml": "16009975_11512287.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2022/ipg221129/16009975_11512287.xml"
+  },
+  {
+    "display_key": "US 2023/0020565 A1",
+    "serial": "17777723",
+    "pgpub_zip": "ipa230119_r1.zip",
+    "pgpub_xml": "17777723_20230020565.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2023/ipa230119_r1/17777723_20230020565.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2019/0142970 A1",
+    "serial": "16164346",
+    "pgpub_zip": "ipa190516.zip",
+    "pgpub_xml": "16164346_20190142970.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2019/ipa190516/16164346_20190142970.xml",
+    "grant_zip": "ipg201110.zip",
+    "grant_xml": "16164346_10828376.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg201110/16164346_10828376.xml"
+  },
+  {
+    "display_key": "US 11793888 B2",
+    "serial": "16834481",
+    "pgpub_zip": "ipa200910.zip",
+    "pgpub_xml": "16834481_20200282079.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200910/16834481_20200282079.xml",
+    "grant_zip": "ipg231024.zip",
+    "grant_xml": "16834481_11793888.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2023/ipg231024/16834481_11793888.xml"
+  },
+  {
+    "display_key": "US 12497632 B2",
+    "serial": "17265750",
+    "pgpub_zip": "ipa210610.zip",
+    "pgpub_xml": "17265750_20210171982.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2021/ipa210610/17265750_20210171982.xml",
+    "grant_zip": "ipg251216.zip",
+    "grant_xml": "17265750_12497632.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2025/ipg251216/17265750_12497632.xml"
+  },
+  {
+    "display_key": "US 2024/0301375 A1",
+    "serial": "18563741",
+    "pgpub_zip": "ipa240912.zip",
+    "pgpub_xml": "18563741_20240301375.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2024/ipa240912/18563741_20240301375.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 10822599 B2",
+    "serial": "15967012",
+    "pgpub_zip": "ipa180830.zip",
+    "pgpub_xml": "15967012_20180245058.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180830/15967012_20180245058.xml",
+    "grant_zip": "ipg201103.zip",
+    "grant_xml": "15967012_10822599.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg201103/15967012_10822599.xml"
+  },
+  {
+    "display_key": "US 10646543 B2",
+    "serial": "15916719",
+    "pgpub_zip": "ipa180719.zip",
+    "pgpub_xml": "15916719_20180200332.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180719/15916719_20180200332.xml",
+    "grant_zip": "ipg200512.zip",
+    "grant_xml": "15916719_10646543.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg200512/15916719_10646543.xml"
+  },
+  {
+    "display_key": "US 2017/0183420 A1",
+    "serial": "15453603",
+    "pgpub_zip": "ipa170629.zip",
+    "pgpub_xml": "15453603_20170183420.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2017/ipa170629/15453603_20170183420.xml",
+    "grant_zip": "ipg220201.zip",
+    "grant_xml": "15453603_11236175.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2022/ipg220201/15453603_11236175.xml"
+  },
+  {
+    "display_key": "US 2020/0063160 A1",
+    "serial": "16534280",
+    "pgpub_zip": "ipa200227.zip",
+    "pgpub_xml": "16534280_20200063160.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200227/16534280_20200063160.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 10808020 B2",
+    "serial": "15565811",
+    "pgpub_zip": "ipa180426.zip",
+    "pgpub_xml": "15565811_20180111975.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180426/15565811_20180111975.xml",
+    "grant_zip": "ipg201020.zip",
+    "grant_xml": "15565811_10808020.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg201020/15565811_10808020.xml"
+  },
+  {
+    "display_key": "US 2023/0381225 A1",
+    "serial": "18123920",
+    "pgpub_zip": "ipa231130_r1.zip",
+    "pgpub_xml": "18123920_20230381225.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2023/ipa231130_r1/18123920_20230381225.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 12509703 B2",
+    "serial": "16880402",
+    "pgpub_zip": "ipa201126.zip",
+    "pgpub_xml": "16880402_20200368279.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa201126/16880402_20200368279.xml",
+    "grant_zip": "ipg251230.zip",
+    "grant_xml": "16880402_12509703.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2025/ipg251230/16880402_12509703.xml"
+  },
+  {
+    "display_key": "US 2017/0152527 A1",
+    "serial": "15428762",
+    "pgpub_zip": "ipa170601.zip",
+    "pgpub_xml": "15428762_20170152527.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2017/ipa170601/15428762_20170152527.xml",
+    "grant_zip": "ipg200121.zip",
+    "grant_xml": "15428762_10538787.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg200121/15428762_10538787.xml"
+  },
+  {
+    "display_key": "US 10253333 B2",
+    "serial": "15709969",
+    "pgpub_zip": "ipa180111.zip",
+    "pgpub_xml": "15709969_20180010152.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180111/15709969_20180010152.xml",
+    "grant_zip": "ipg190409.zip",
+    "grant_xml": "15709969_10253333.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2019/ipg190409/15709969_10253333.xml"
+  },
+  {
+    "display_key": "US 10196651 B2",
+    "serial": "15847582",
+    "pgpub_zip": "ipa180503.zip",
+    "pgpub_xml": "15847582_20180119175.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180503/15847582_20180119175.xml",
+    "grant_zip": "ipg190205.zip",
+    "grant_xml": "15847582_10196651.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2019/ipg190205/15847582_10196651.xml"
+  },
+  {
+    "display_key": "US 2020/0297762 A1",
+    "serial": "16861757",
+    "pgpub_zip": "ipa200924.zip",
+    "pgpub_xml": "16861757_20200297762.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200924/16861757_20200297762.xml",
+    "grant_zip": "ipg220426.zip",
+    "grant_xml": "16861757_11311574.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2022/ipg220426/16861757_11311574.xml"
+  },
+  {
+    "display_key": "US 2020/0002390 A1",
+    "serial": "16550949",
+    "pgpub_zip": "ipa200102.zip",
+    "pgpub_xml": "16550949_20200002390.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200102/16550949_20200002390.xml",
+    "grant_zip": "ipg210921.zip",
+    "grant_xml": "16550949_11123443.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2021/ipg210921/16550949_11123443.xml"
+  },
+  {
+    "display_key": "US 2023/0416775 A1",
+    "serial": "17982209",
+    "pgpub_zip": "ipa231228_r1.zip",
+    "pgpub_xml": "17982209_20230416775.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2023/ipa231228_r1/17982209_20230416775.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2023/0323390 A1",
+    "serial": "18001342",
+    "pgpub_zip": "ipa231012_r2.zip",
+    "pgpub_xml": "18001342_20230323390.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2023/ipa231012_r2/18001342_20230323390.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2017/0251645 A1",
+    "serial": "15499615",
+    "pgpub_zip": "ipa170907.zip",
+    "pgpub_xml": "15499615_20170251645.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2017/ipa170907/15499615_20170251645.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2022/0315932 A1",
+    "serial": "17749012",
+    "pgpub_zip": "ipa221006.zip",
+    "pgpub_xml": "17749012_20220315932.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2022/ipa221006/17749012_20220315932.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2024/0018203 A1",
+    "serial": "18247093",
+    "pgpub_zip": "ipa240118_r1.zip",
+    "pgpub_xml": "18247093_20240018203.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2024/ipa240118_r1/18247093_20240018203.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2020/0318087 A1",
+    "serial": "16906845",
+    "pgpub_zip": "ipa201008.zip",
+    "pgpub_xml": "16906845_20200318087.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa201008/16906845_20200318087.xml",
+    "grant_zip": "ipg240305.zip",
+    "grant_xml": "16906845_11920169.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2024/ipg240305/16906845_11920169.xml"
+  },
+  {
+    "display_key": "US 2018/0326000 A1",
+    "serial": "16034153",
+    "pgpub_zip": "ipa181115.zip",
+    "pgpub_xml": "16034153_20180326000.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa181115/16034153_20180326000.xml",
+    "grant_zip": "ipg220201.zip",
+    "grant_xml": "16034153_11235026.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2022/ipg220201/16034153_11235026.xml"
+  },
+  {
+    "display_key": "US 2018/0263228 A1",
+    "serial": "15990176",
+    "pgpub_zip": "ipa180920.zip",
+    "pgpub_xml": "15990176_20180263228.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180920/15990176_20180263228.xml",
+    "grant_zip": "ipg201110.zip",
+    "grant_xml": "15990176_10827731.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg201110/15990176_10827731.xml"
+  },
+  {
+    "display_key": "US 2019/0345208 A1",
+    "serial": "16523328",
+    "pgpub_zip": "ipa191114.zip",
+    "pgpub_xml": "16523328_20190345208.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2019/ipa191114/16523328_20190345208.xml",
+    "grant_zip": "ipg230425.zip",
+    "grant_xml": "16523328_11634463.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2023/ipg230425/16523328_11634463.xml"
+  },
+  {
+    "display_key": "US 2023/0048224 A1",
+    "serial": "17773507",
+    "pgpub_zip": "ipa230216_r2.zip",
+    "pgpub_xml": "17773507_20230048224.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2023/ipa230216_r2/17773507_20230048224.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 10675302 B2",
+    "serial": "15640104",
+    "pgpub_zip": "ipa171116.zip",
+    "pgpub_xml": "15640104_20170326174.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2017/ipa171116/15640104_20170326174.xml",
+    "grant_zip": "ipg200609.zip",
+    "grant_xml": "15640104_10675302.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg200609/15640104_10675302.xml"
+  },
+  {
+    "display_key": "US 2020/0109406 A1",
+    "serial": "16591445",
+    "pgpub_zip": "ipa200409.zip",
+    "pgpub_xml": "16591445_20200109406.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200409/16591445_20200109406.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2019/0167815 A1",
+    "serial": "16169420",
+    "pgpub_zip": "ipa190606.zip",
+    "pgpub_xml": "16169420_20190167815.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2019/ipa190606/16169420_20190167815.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2019/0262473 A1",
+    "serial": "16346237",
+    "pgpub_zip": "ipa190829.zip",
+    "pgpub_xml": "16346237_20190262473.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2019/ipa190829/16346237_20190262473.xml",
+    "grant_zip": "ipg210601.zip",
+    "grant_xml": "16346237_11020492.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2021/ipg210601/16346237_11020492.xml"
+  },
+  {
+    "display_key": "US 12516098 B2",
+    "serial": "16058307",
+    "pgpub_zip": "ipa190214.zip",
+    "pgpub_xml": "16058307_20190048060.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2019/ipa190214/16058307_20190048060.xml",
+    "grant_zip": "ipg260106.zip",
+    "grant_xml": "16058307_12516098.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2026/ipg260106/16058307_12516098.xml"
+  },
+  {
+    "display_key": "US 2021/0317430 A1",
+    "serial": "17272172",
+    "pgpub_zip": "ipa211014.zip",
+    "pgpub_xml": "17272172_20210317430.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2021/ipa211014/17272172_20210317430.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2020/0231989 A1",
+    "serial": "16842139",
+    "pgpub_zip": "ipa200723.zip",
+    "pgpub_xml": "16842139_20200231989.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200723/16842139_20200231989.xml",
+    "grant_zip": "ipg240213.zip",
+    "grant_xml": "16842139_11898158.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2024/ipg240213/16842139_11898158.xml"
+  },
+  {
+    "display_key": "US 10960085 B2",
+    "serial": "15697917",
+    "pgpub_zip": "ipa180308.zip",
+    "pgpub_xml": "15697917_20180064827.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180308/15697917_20180064827.xml",
+    "grant_zip": "ipg210330.zip",
+    "grant_xml": "15697917_10960085.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2021/ipg210330/15697917_10960085.xml"
+  },
+  {
+    "display_key": "US 2020/0131490 A1",
+    "serial": "16738766",
+    "pgpub_zip": "ipa200430.zip",
+    "pgpub_xml": "16738766_20200131490.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200430/16738766_20200131490.xml",
+    "grant_zip": "ipg231219.zip",
+    "grant_xml": "16738766_11845965.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2023/ipg231219/16738766_11845965.xml"
+  },
+  {
+    "display_key": "US 11718834 B2",
+    "serial": "16790841",
+    "pgpub_zip": "ipa200910.zip",
+    "pgpub_xml": "16790841_20200283739.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200910/16790841_20200283739.xml",
+    "grant_zip": "ipg230808.zip",
+    "grant_xml": "16790841_11718834.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2023/ipg230808/16790841_11718834.xml"
+  },
+  {
+    "display_key": "US 11834686 B2",
+    "serial": "16545363",
+    "pgpub_zip": "ipa200227.zip",
+    "pgpub_xml": "16545363_20200063114.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200227/16545363_20200063114.xml",
+    "grant_zip": "ipg231205.zip",
+    "grant_xml": "16545363_11834686.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2023/ipg231205/16545363_11834686.xml"
+  },
+  {
+    "display_key": "US 2023/0295563 A1",
+    "serial": "17971071",
+    "pgpub_zip": "ipa230921.zip",
+    "pgpub_xml": "17971071_20230295563.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2023/ipa230921/17971071_20230295563.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2018/0216136 A1",
+    "serial": "15935908",
+    "pgpub_zip": "ipa180802.zip",
+    "pgpub_xml": "15935908_20180216136.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180802/15935908_20180216136.xml",
+    "grant_zip": "ipg191203.zip",
+    "grant_xml": "15935908_10494648.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2019/ipg191203/15935908_10494648.xml"
+  },
+  {
+    "display_key": "US 2022/0273819 A1",
+    "serial": "17572189",
+    "pgpub_zip": "ipa220901.zip",
+    "pgpub_xml": "17572189_20220273819.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2022/ipa220901/17572189_20220273819.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2021/0222151 A1",
+    "serial": "17222727",
+    "pgpub_zip": "ipa210722.zip",
+    "pgpub_xml": "17222727_20210222151.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2021/ipa210722/17222727_20210222151.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 10344271 B2",
+    "serial": "14990580",
+    "pgpub_zip": "ipa160804.zip",
+    "pgpub_xml": "14990580_20160222364.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa160804/14990580_20160222364.xml",
+    "grant_zip": "ipg190709.zip",
+    "grant_xml": "14990580_10344271.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2019/ipg190709/14990580_10344271.xml"
+  },
+  {
+    "display_key": "US 2021/0130828 A1",
+    "serial": "17085319",
+    "pgpub_zip": "ipa210506.zip",
+    "pgpub_xml": "17085319_20210130828.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2021/ipa210506/17085319_20210130828.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2020/0239911 A1",
+    "serial": "16734271",
+    "pgpub_zip": "ipa200730.zip",
+    "pgpub_xml": "16734271_20200239911.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2020/ipa200730/16734271_20200239911.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2019/0352614 A1",
+    "serial": "16480939",
+    "pgpub_zip": "ipa191121.zip",
+    "pgpub_xml": "16480939_20190352614.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2019/ipa191121/16480939_20190352614.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2023/0242602 A1",
+    "serial": "17791395",
+    "pgpub_zip": "ipa230803_r2.zip",
+    "pgpub_xml": "17791395_20230242602.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2023/ipa230803_r2/17791395_20230242602.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2025/0361528 A1",
+    "serial": "18722513",
+    "pgpub_zip": "ipa251127.zip",
+    "pgpub_xml": "18722513_20250361528.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2025/ipa251127/18722513_20250361528.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2024/0043829 A1",
+    "serial": "18246574",
+    "pgpub_zip": "ipa240208.zip",
+    "pgpub_xml": "18246574_20240043829.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2024/ipa240208/18246574_20240043829.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2025/0243512 A1",
+    "serial": "18730738",
+    "pgpub_zip": "ipa250731.zip",
+    "pgpub_xml": "18730738_20250243512.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2025/ipa250731/18730738_20250243512.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2025/0144240 A1",
+    "serial": "18707085",
+    "pgpub_zip": "ipa250508.zip",
+    "pgpub_xml": "18707085_20250144240.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2025/ipa250508/18707085_20250144240.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 10179918 B2",
+    "serial": "15141333",
+    "pgpub_zip": "ipa161110.zip",
+    "pgpub_xml": "15141333_20160326548.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa161110/15141333_20160326548.xml",
+    "grant_zip": "ipg190115.zip",
+    "grant_xml": "15141333_10179918.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2019/ipg190115/15141333_10179918.xml"
+  },
+  {
+    "display_key": "US 10883119 B2",
+    "serial": "13939633",
+    "pgpub_zip": "ipa140116.zip",
+    "pgpub_xml": "13939633_20140017214.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2014/ipa140116/13939633_20140017214.xml",
+    "grant_zip": "ipg210105.zip",
+    "grant_xml": "13939633_10883119.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2021/ipg210105/13939633_10883119.xml"
+  },
+  {
+    "display_key": "US 9765360 B2",
+    "serial": "15146276",
+    "pgpub_zip": "ipa160818.zip",
+    "pgpub_xml": "15146276_20160237457.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa160818/15146276_20160237457.xml",
+    "grant_zip": "ipg170919.zip",
+    "grant_xml": "15146276_09765360.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2017/ipg170919/15146276_09765360.xml"
+  },
+  {
+    "display_key": "US 9890395 B2",
+    "serial": "15080101",
+    "pgpub_zip": "ipa160707.zip",
+    "pgpub_xml": "15080101_20160194665.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa160707/15080101_20160194665.xml",
+    "grant_zip": "ipg180213.zip",
+    "grant_xml": "15080101_09890395.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180213/15080101_09890395.xml"
+  },
+  {
+    "display_key": "US 9970028 B2",
+    "serial": "14990300",
+    "pgpub_zip": "ipa160526.zip",
+    "pgpub_xml": "14990300_20160145644.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa160526/14990300_20160145644.xml",
+    "grant_zip": "ipg180515.zip",
+    "grant_xml": "14990300_09970028.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180515/14990300_09970028.xml"
+  },
+  {
+    "display_key": "US 10072066 B2",
+    "serial": "14611880",
+    "pgpub_zip": "ipa150806.zip",
+    "pgpub_xml": "14611880_20150218253.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2015/ipa150806/14611880_20150218253.xml",
+    "grant_zip": "ipg180911.zip",
+    "grant_xml": "14611880_10072066.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180911/14611880_10072066.xml"
+  },
+  {
+    "display_key": "US 9717759 B2",
+    "serial": "14495529",
+    "pgpub_zip": "ipa150423.zip",
+    "pgpub_xml": "14495529_20150110757.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2015/ipa150423/14495529_20150110757.xml",
+    "grant_zip": "ipg170801.zip",
+    "grant_xml": "14495529_09717759.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2017/ipg170801/14495529_09717759.xml"
+  },
+  {
+    "display_key": "US 9752140 B2",
+    "serial": "15007569",
+    "pgpub_zip": "ipa160623.zip",
+    "pgpub_xml": "15007569_20160177290.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa160623/15007569_20160177290.xml",
+    "grant_zip": "ipg170905.zip",
+    "grant_xml": "15007569_09752140.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2017/ipg170905/15007569_09752140.xml"
+  },
+  {
+    "display_key": "US 9970001 B2",
+    "serial": "14731821",
+    "pgpub_zip": "ipa151210.zip",
+    "pgpub_xml": "14731821_20150353917.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2015/ipa151210/14731821_20150353917.xml",
+    "grant_zip": "ipg180515.zip",
+    "grant_xml": "14731821_09970001.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180515/14731821_09970001.xml"
+  },
+  {
+    "display_key": "US 10717993 B2",
+    "serial": "15095858",
+    "pgpub_zip": "ipa160728.zip",
+    "pgpub_xml": "15095858_20160215298.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa160728/15095858_20160215298.xml",
+    "grant_zip": "ipg200721.zip",
+    "grant_xml": "15095858_10717993.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg200721/15095858_10717993.xml"
+  },
+  {
+    "display_key": "US 10046028 B2",
+    "serial": "15133862",
+    "pgpub_zip": "ipa160804.zip",
+    "pgpub_xml": "15133862_20160220634.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa160804/15133862_20160220634.xml",
+    "grant_zip": "ipg180814.zip",
+    "grant_xml": "15133862_10046028.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180814/15133862_10046028.xml"
+  },
+  {
+    "display_key": "US 10072062 B2",
+    "serial": "14589632",
+    "pgpub_zip": "ipa150910.zip",
+    "pgpub_xml": "14589632_20150252094.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2015/ipa150910/14589632_20150252094.xml",
+    "grant_zip": "ipg180911.zip",
+    "grant_xml": "14589632_10072062.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180911/14589632_10072062.xml"
+  },
+  {
+    "display_key": "US 10155011 B2",
+    "serial": "14591625",
+    "pgpub_zip": "ipa150618.zip",
+    "pgpub_xml": "14591625_20150164954.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2015/ipa150618/14591625_20150164954.xml",
+    "grant_zip": "ipg181218.zip",
+    "grant_xml": "14591625_10155011.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg181218/14591625_10155011.xml"
+  },
+  {
+    "display_key": "US 10662434 B2",
+    "serial": "14939719",
+    "pgpub_zip": "ipa160512.zip",
+    "pgpub_xml": "14939719_20160130314.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa160512/14939719_20160130314.xml",
+    "grant_zip": "ipg200526.zip",
+    "grant_xml": "14939719_10662434.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg200526/14939719_10662434.xml"
+  },
+  {
+    "display_key": "US 10344289 B2",
+    "serial": "14538609",
+    "pgpub_zip": "ipa150305.zip",
+    "pgpub_xml": "14538609_20150064790.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2015/ipa150305/14538609_20150064790.xml",
+    "grant_zip": "ipg190709.zip",
+    "grant_xml": "14538609_10344289.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2019/ipg190709/14538609_10344289.xml"
+  },
+  {
+    "display_key": "US 2024/0066146 A1",
+    "serial": "18258027",
+    "pgpub_zip": "ipa240229.zip",
+    "pgpub_xml": "18258027_20240066146.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2024/ipa240229/18258027_20240066146.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 10888589 B2",
+    "serial": "15486731",
+    "pgpub_zip": "ipa170810.zip",
+    "pgpub_xml": "15486731_20170224741.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2017/ipa170810/15486731_20170224741.xml",
+    "grant_zip": "ipg210112.zip",
+    "grant_xml": "15486731_10888589.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2021/ipg210112/15486731_10888589.xml"
+  },
+  {
+    "display_key": "US 2018/0185516 A1",
+    "serial": "15835957",
+    "pgpub_zip": "ipa180705.zip",
+    "pgpub_xml": "15835957_20180185516.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180705/15835957_20180185516.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 11884930 B2",
+    "serial": "17127210",
+    "pgpub_zip": "ipa210408.zip",
+    "pgpub_xml": "17127210_20210102222.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2021/ipa210408/17127210_20210102222.xml",
+    "grant_zip": "ipg240130.zip",
+    "grant_xml": "17127210_11884930.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2024/ipg240130/17127210_11884930.xml"
+  },
+  {
+    "display_key": "US 2017/0216358 A1",
+    "serial": "15490601",
+    "pgpub_zip": "ipa170803.zip",
+    "pgpub_xml": "15490601_20170216358.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2017/ipa170803/15490601_20170216358.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2018/0002379 A1",
+    "serial": "15543516",
+    "pgpub_zip": "ipa180104.zip",
+    "pgpub_xml": "15543516_20180002379.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180104/15543516_20180002379.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 10604771 B2",
+    "serial": "14271008",
+    "pgpub_zip": "ipa141113.zip",
+    "pgpub_xml": "14271008_20140335063.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2014/ipa141113/14271008_20140335063.xml",
+    "grant_zip": "ipg200331.zip",
+    "grant_xml": "14271008_10604771.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg200331/14271008_10604771.xml"
+  },
+  {
+    "display_key": "US 9914930 B2",
+    "serial": "14019211",
+    "pgpub_zip": "ipa150305.zip",
+    "pgpub_xml": "14019211_20150067921.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2015/ipa150305/14019211_20150067921.xml",
+    "grant_zip": "ipg180313.zip",
+    "grant_xml": "14019211_09914930.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180313/14019211_09914930.xml"
+  },
+  {
+    "display_key": "US 10358684 B2",
+    "serial": "15379152",
+    "pgpub_zip": "ipa170330.zip",
+    "pgpub_xml": "15379152_20170088825.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2017/ipa170330/15379152_20170088825.xml",
+    "grant_zip": "ipg190723.zip",
+    "grant_xml": "15379152_10358684.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2019/ipg190723/15379152_10358684.xml"
+  },
+  {
+    "display_key": "US 9963711 B2",
+    "serial": "14019244",
+    "pgpub_zip": "ipa140327.zip",
+    "pgpub_xml": "14019244_20140090112.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2014/ipa140327/14019244_20140090112.xml",
+    "grant_zip": "ipg180508.zip",
+    "grant_xml": "14019244_09963711.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180508/14019244_09963711.xml"
+  },
+  {
+    "display_key": "US 9757420 B2",
+    "serial": "14807595",
+    "pgpub_zip": "ipa160128.zip",
+    "pgpub_xml": "14807595_20160022737.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa160128/14807595_20160022737.xml",
+    "grant_zip": "ipg170912.zip",
+    "grant_xml": "14807595_09757420.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2017/ipg170912/14807595_09757420.xml"
+  },
+  {
+    "display_key": "US 10501748 B2",
+    "serial": "14243553",
+    "pgpub_zip": "ipa141009.zip",
+    "pgpub_xml": "14243553_20140304853.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2014/ipa141009/14243553_20140304853.xml",
+    "grant_zip": "ipg191210.zip",
+    "grant_xml": "14243553_10501748.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2019/ipg191210/14243553_10501748.xml"
+  },
+  {
+    "display_key": "US 11110154 B2",
+    "serial": "14706747",
+    "pgpub_zip": "ipa151126.zip",
+    "pgpub_xml": "14706747_20150335708.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2015/ipa151126/14706747_20150335708.xml",
+    "grant_zip": "ipg210907.zip",
+    "grant_xml": "14706747_11110154.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2021/ipg210907/14706747_11110154.xml"
+  },
+  {
+    "display_key": "US 10669551 B2",
+    "serial": "15217655",
+    "pgpub_zip": "ipa161110.zip",
+    "pgpub_xml": "15217655_20160326537.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa161110/15217655_20160326537.xml",
+    "grant_zip": "ipg200602.zip",
+    "grant_xml": "15217655_10669551.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2020/ipg200602/15217655_10669551.xml"
+  },
+  {
+    "display_key": "US 10174331 B2",
+    "serial": "13889162",
+    "pgpub_zip": "ipa131205.zip",
+    "pgpub_xml": "13889162_20130326645.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2013/ipa131205/13889162_20130326645.xml",
+    "grant_zip": "ipg190108.zip",
+    "grant_xml": "13889162_10174331.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2019/ipg190108/13889162_10174331.xml"
+  },
+  {
+    "display_key": "US 9937207 B2",
+    "serial": "14221074",
+    "pgpub_zip": "ipa141009.zip",
+    "pgpub_xml": "14221074_20140301990.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2014/ipa141009/14221074_20140301990.xml",
+    "grant_zip": "ipg180410.zip",
+    "grant_xml": "14221074_09937207.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180410/14221074_09937207.xml"
+  },
+  {
+    "display_key": "US 2019/0365924 A1",
+    "serial": "16413144",
+    "pgpub_zip": "ipa191205.zip",
+    "pgpub_xml": "16413144_20190365924.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2019/ipa191205/16413144_20190365924.xml",
+    "grant_zip": "ipg230704.zip",
+    "grant_xml": "16413144_11690921.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2023/ipg230704/16413144_11690921.xml"
+  },
+  {
+    "display_key": "US 2017/0204425 A1",
+    "serial": "15471545",
+    "pgpub_zip": "ipa170720.zip",
+    "pgpub_xml": "15471545_20170204425.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2017/ipa170720/15471545_20170204425.xml",
+    "grant_zip": "ipg180710.zip",
+    "grant_xml": "15471545_10017775.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180710/15471545_10017775.xml"
+  },
+  {
+    "display_key": "US 11504389 B2",
+    "serial": "15828931",
+    "pgpub_zip": "ipa180607.zip",
+    "pgpub_xml": "15828931_20180153921.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2018/ipa180607/15828931_20180153921.xml",
+    "grant_zip": "ipg221122.zip",
+    "grant_xml": "15828931_11504389.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2022/ipg221122/15828931_11504389.xml"
+  },
+  {
+    "display_key": "US 2021/0348143 A1",
+    "serial": "17239780",
+    "pgpub_zip": "ipa211111.zip",
+    "pgpub_xml": "17239780_20210348143.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2021/ipa211111/17239780_20210348143.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 2019/0322711 A1",
+    "serial": "16386885",
+    "pgpub_zip": "ipa191024.zip",
+    "pgpub_xml": "16386885_20190322711.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2019/ipa191024/16386885_20190322711.xml",
+    "grant_zip": "ipg220823.zip",
+    "grant_xml": "16386885_11421007.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2022/ipg220823/16386885_11421007.xml"
+  },
+  {
+    "display_key": "US 9957501 B2",
+    "serial": "15172626",
+    "pgpub_zip": "ipa161222.zip",
+    "pgpub_xml": "15172626_20160369262.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2016/ipa161222/15172626_20160369262.xml",
+    "grant_zip": "ipg180501.zip",
+    "grant_xml": "15172626_09957501.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg180501/15172626_09957501.xml"
+  },
+  {
+    "display_key": "US 2022/0064237 A1",
+    "serial": "17423063",
+    "pgpub_zip": "ipa220303.zip",
+    "pgpub_xml": "17423063_20220064237.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2022/ipa220303/17423063_20220064237.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  },
+  {
+    "display_key": "US 10117899 B2",
+    "serial": "14516189",
+    "pgpub_zip": "ipa150625.zip",
+    "pgpub_xml": "14516189_20150174169.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2015/ipa150625/14516189_20150174169.xml",
+    "grant_zip": "ipg181106.zip",
+    "grant_xml": "14516189_10117899.xml",
+    "grant_uri": "https://api.uspto.gov/api/v1/datasets/products/files/PTGRXML-SPLT/2018/ipg181106/14516189_10117899.xml"
+  },
+  {
+    "display_key": "US 2021/0002670 A1",
+    "serial": "16982941",
+    "pgpub_zip": "ipa210107.zip",
+    "pgpub_xml": "16982941_20210002670.xml",
+    "pgpub_uri": "https://api.uspto.gov/api/v1/datasets/products/files/APPXML-SPLT/2021/ipa210107/16982941_20210002670.xml",
+    "grant_zip": "",
+    "grant_xml": "",
+    "grant_uri": ""
+  }
+]
